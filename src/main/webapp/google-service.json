@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "697811289321",
+    "project_id": "crypto-test-50468",
+    "storage_bucket": "crypto-test-50468.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:697811289321:android:c6cf476165756769439c78",
+        "android_client_info": {
+          "package_name": "com.mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0My_kT6p5dy15MgDZLiz9OCNqaohDGeU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

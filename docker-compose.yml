@@ -1,0 +1,40 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: servlet_service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      # Variables d'environnement pour la base de données
+      DB_URL: jdbc:postgresql://db:5432/crypto
+      DB_USERNAME: postgres
+      DB_PASSWORD: mams04032003
+
+  symfony_app:
+    build:
+      context: ../identifiant
+      dockerfile: Dockerfile
+    container_name: symfony_service
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: "postgresql://postgres:mams04032003@db:5432/crypto?serverVersion=16&charset=utf8"
+
+  db:
+    image: postgres:16
+    container_name: postgres_service
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mams04032003
+      POSTGRES_DB: crypto
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./data:/tmp
+
